@@ -1,0 +1,55 @@
+export const schedule={0:{run:'Longão',workout:'core-sunday'},1:{run:'Z1/easy opcional • 20–35 min',workout:'lower-a'},2:{run:'Velocidade / intervalado'},3:{workout:'upper-a'},4:{run:'Velocidade / ritmo'},5:{run:'Regenerativo',workout:'lower-b'},6:{workout:'upper-b'}};
+const common={squat:{setup:['Barra na altura adequada e base firme.','Inspire, expanda o tronco e trave costelas sobre a pelve.'],execution:['Destrave quadril e joelhos juntos.','Desça com os pés inteiros apoiados e joelhos acompanhando os dedos.','Suba empurrando o chão com máxima intenção.'],errors:['Relaxar no fundo.','Quadril subir antes do tronco.','Forçar profundidade com perda de posição.']},hip:{setup:['Escápulas apoiadas no banco e barra protegida na dobra do quadril.','Pés posicionados para canelas próximas da vertical no topo.'],execution:['Eleve a pelve pressionando o chão.','Finalize com tronco e coxas alinhados, pausa de 1 segundo.'],errors:['Hiperestender a lombar.','Afastar ou aproximar demais os pés.']}};
+export const workouts={
+'lower-a':{name:'Inferior A',subtitle:'Força no agachamento + potência vertical',day:'Segunda',duration:'70–85 min',focus:'Carga alta, velocidade e baixo dano muscular',exercises:[
+{name:'Box jump / salto vertical',scheme:'4 × 3',rir:'Qualidade máxima',rest:'90–120s',method:'Potência',setup:['Caixa baixa o suficiente para aterrissar sem elevar os joelhos ao peito.','Fique a cerca de um pé da caixa.'],execution:['Faça flexão curta de quadril e joelhos.','Salte com intenção máxima.','Aterrisse estável e desça caminhando.'],errors:['Caixa alta demais.','Séries sem descanso.','Saltar para descer.']},
+{name:'Agachamento livre',scheme:'5 × 4–5',rir:'RIR 2 → 1',rest:'3–4 min',method:'Progressão dupla',...common.squat},
+{name:'Elevação pélvica com barra',scheme:'4 × 5–7',rir:'RIR 1–2',rest:'2–3 min',method:'Pausa 1s no topo',...common.hip},
+{name:'Agachamento búlgaro',scheme:'2–3 × 6–8/lado',rir:'RIR 2–3',rest:'90–120s',method:'Controle unilateral',setup:['Pé traseiro apoiado em banco baixo.','Pé dianteiro inteiro no chão e pelve voltada à frente.'],execution:['Desça pela perna da frente.','Mantenha joelho alinhado.','Suba sem impulsionar com a perna traseira.'],errors:['Ficar perto demais do banco.','Usar carga que destrua o equilíbrio.','Chegar à falha.']},
+{name:'Cadeira extensora',scheme:'2 × 8–10',rir:'RIR 2',rest:'75–90s',method:'Sem intensificador'},
+{name:'Cadeira adutora',scheme:'2 × 8–12',rir:'RIR 2',rest:'75–90s',method:'Amplitude tolerada'},
+{name:'Panturrilha em pé',scheme:'4 × 5–8',rir:'RIR 1–2',rest:'90s',method:'Subida vigorosa'},
+{name:'Sóleo sentado',scheme:'3 × 8–12',rir:'RIR 1–2',rest:'75–90s'}]},
+'upper-a':{name:'Upper A',subtitle:'Ênfase em empurrar + core',day:'Quarta',duration:'80–95 min',focus:'Quatro séries e métodos controlados',exercises:[
+{name:'Supino inclinado com halteres',scheme:'4 × 6–8',rir:'RIR 1–2',rest:'2:30–3 min',method:'Progressão dupla'},
+{name:'Barra fixa pronada com peso',scheme:'4 × 5–8',rir:'RIR 1–2',rest:'2:30–3 min',method:'Progressão dupla',setup:['Pegada pouco além dos ombros e corpo estável.','Use carga apenas após dominar o peso corporal.'],execution:['Inicie deprimindo levemente as escápulas.','Leve o peito à barra com os cotovelos descendo.','Retorne até extensão controlada.'],errors:['Balançar as pernas.','Projetar a cabeça.','Encurtar amplitude.']},
+{name:'Chest press convergente',scheme:'4 × 8–10',rir:'RIR 1',rest:'60–90s',method:'Última: rest-pause opcional'},
+{name:'Remada cavalinho / barra apoiada',scheme:'4 × 6–8',rir:'RIR 1–2',rest:'90s',method:'Alternada com chest press'},
+{name:'Cross baixo para cima',scheme:'4 × 10–15',rir:'RIR 1',rest:'60–90s',method:'Última: drop-set 25%'},
+{name:'Desenvolvimento na máquina',scheme:'4 × 6–10',rir:'RIR 1–2',rest:'2 min',method:'Progressão dupla'},
+{name:'Elevação lateral na polia',scheme:'4 × 10–15',rir:'RIR 1',rest:'60–75s',method:'Última: drop mecânico'},
+{name:'Tríceps francês na polia',scheme:'4 × 8–12',rir:'RIR 1',rest:'60–75s',method:'Alternada com rosca'},
+{name:'Rosca direta barra W',scheme:'4 × 6–10',rir:'RIR 1–2',rest:'60–75s',method:'Última: rest-pause opcional'},
+{name:'Ab wheel',scheme:'3 × 6–10',rir:'RIR 2',rest:'60–90s',method:'Progredir amplitude',setup:['Ajoelhe e posicione a roda abaixo dos ombros.','Contraia glúteos e aproxime costelas da pelve.'],execution:['Avance movendo ombros e quadril juntos.','Pare antes da lombar arquear.','Retorne usando abdômen e dorsais.'],errors:['Buscar amplitude antes do controle.','Deixar o quadril para trás.','Sentir principalmente lombar/psoas.']},
+{name:'Pallof press',scheme:'3 × 8–12/lado',rir:'RIR 2',rest:'45–60s',method:'Pausa 2s',setup:['Fique de lado para a polia na altura do peito.','Afaste-se até haver tensão.'],execution:['Pressione as mãos à frente sem girar.','Pause 2 segundos e retorne.'],errors:['Inclinar o tronco.','Usar carga que provoque rotação.']},
+{name:'Suitcase carry',scheme:'3 × 25–40m/lado',rir:'Técnica',rest:'60–90s',method:'Anti-inclinação',setup:['Segure peso em uma mão e mantenha ombros nivelados.'],execution:['Caminhe com passadas naturais.','Não incline o tronco nem apoie o peso na coxa.'],errors:['Correr com a carga.','Encolher o ombro.','Alterar a passada.']}]},
+'lower-b':{name:'Inferior B',subtitle:'Terra + cadeia posterior + potência horizontal',day:'Sexta',duration:'70–85 min',focus:'Regenerativo antes; força à tarde',exercises:[
+{name:'Pogos bilaterais',scheme:'2–3 × 10',rir:'Qualidade',rest:'60s',method:'Contato curto',setup:['Fique alto com joelhos destravados.'],execution:['Pressione rapidamente o antepé.','Mantenha quadril alto e contato curto.'],errors:['Agachar a cada salto.','Buscar altura.','Continuar com tendão rígido.']},
+{name:'Bounds progressivos',scheme:'2–3 × 4–6/lado',rir:'70–90% intenção',rest:'90–120s',method:'Potência horizontal',setup:['Use espaço plano e comece submáximo.'],execution:['Projete o corpo à frente alternando pernas.','Aterrisse perto do centro de massa.','Mantenha ritmo e alinhamento.'],errors:['Pé muito à frente.','Pelve cair.','Usar como condicionamento.']},
+{name:'Terra convencional OU sumô',scheme:'5 × 3–5',rir:'RIR 2',rest:'3–4 min',method:'Progressão dupla',setup:['Barra sobre o meio do pé.','Crie tensão antes de tirar a barra do chão.'],execution:['Empurre o chão e mantenha a barra próxima.','Quadril e ombros sobem juntos.','Finalize alto sem inclinar para trás.'],errors:['Arrancar sem tensão.','Barra afastada.','Hiperestender a lombar.','Quicar repetições.']},
+{name:'Leg press 45°',scheme:'3 × 5–8',rir:'RIR 2',rest:'2–3 min'},
+{name:'Step-up com halteres',scheme:'2 × 6–8/lado',rir:'RIR 2–3',rest:'90–120s',method:'Unilateral',setup:['Caixa com quadril abaixo ou próximo da altura do joelho.','Pé inteiro sobre a caixa.'],execution:['Pressione com a perna de cima.','Suba sem saltar com a perna de baixo.','Desça controladamente.'],errors:['Caixa alta.','Impulso da perna de baixo.','Joelho entrar.']},
+{name:'Flexora sentada/deitada',scheme:'2–3 × 6–10',rir:'RIR 1–2',rest:'90s'},
+{name:'Cadeira abdutora',scheme:'2 × 10–15',rir:'RIR 2',rest:'60–75s'},
+{name:'Panturrilha unilateral',scheme:'3 × 6–10/lado',rir:'RIR 1–2',rest:'75–90s'},
+{name:'Farmer’s walk',scheme:'3 × 30–40m',rir:'Técnica',rest:'90s',method:'Estabilidade global',setup:['Pegue duas cargas com técnica de terra.','Fique alto e mantenha ombros estáveis.'],execution:['Caminhe com passos naturais e silenciosos.','Respire curto mantendo pressão.'],errors:['Inclinar para trás.','Passos desorganizados.','Perder postura pela carga.']}]},
+'upper-b':{name:'Upper B',subtitle:'Ênfase em puxar + core/lombar',day:'Sábado',duration:'80–95 min',focus:'Barras livres e manutenção do peitoral',exercises:[
+{name:'Barra fixa supinada com peso',scheme:'4 × 5–8',rir:'RIR 1–2',rest:'2:30–3 min',method:'Progressão dupla'},
+{name:'Remada curvada / cavalinho',scheme:'4 × 6–8',rir:'RIR 1–2',rest:'2–3 min',method:'Sem falha'},
+{name:'Supino inclinado com halteres',scheme:'4 × 8–10',rir:'RIR 1–2',rest:'2 min',method:'Última: rest-pause opcional'},
+{name:'Remada invertida na barra',scheme:'4 × 8–12',rir:'RIR 1–2',rest:'90s',method:'Progressão mecânica',setup:['Barra fixa no rack e corpo alinhado.'],execution:['Leve o peito à barra.','Pause e desça controladamente.','Mantenha glúteos e abdômen ativos.'],errors:['Quadril cair.','Projetar cabeça.','Encurtar descida.']},
+{name:'Cross-over tradicional',scheme:'4 × 10–15',rir:'RIR 1',rest:'60–90s',method:'Última: drop-set'},
+{name:'Elevação lateral com halteres',scheme:'4 × 10–15',rir:'RIR 1',rest:'60–75s',method:'Alternada com crucifixo'},
+{name:'Crucifixo invertido no cross',scheme:'4 × 12–15',rir:'RIR 1',rest:'60–75s',method:'Última: drop leve'},
+{name:'Rosca Scott barra W',scheme:'4 × 8–12',rir:'RIR 1',rest:'60–75s',method:'Última: rest-pause'},
+{name:'Tríceps barra reta/V',scheme:'4 × 8–12',rir:'RIR 1',rest:'60–75s',method:'Última: rest-pause'},
+{name:'Extensão no banco 45°',scheme:'3 × 8–12',rir:'RIR 2',rest:'60–90s',setup:['Apoio abaixo da dobra do quadril e pés firmes.'],execution:['Desça dobrando o quadril com coluna estável.','Suba até alinhar tronco e pernas.'],errors:['Arredondar/estender a lombar.','Subir além do alinhamento.','Usar impulso.']},
+{name:'Bird dog com pausa',scheme:'3 × 6–8/lado',rir:'Técnica',rest:'45–60s',method:'Pausa 3s',setup:['Quatro apoios, mãos sob ombros e joelhos sob quadris.'],execution:['Estenda braço e perna opostos sem girar a pelve.','Pause 3 segundos e retorne.'],errors:['Arquear lombar.','Abrir a pelve.','Fazer rápido.']},
+{name:'Prancha lateral curta',scheme:'3 × 20–30s/lado',rir:'Técnica',rest:'45–60s',setup:['Cotovelo sob ombro e corpo alinhado.'],execution:['Eleve o quadril e respire mantendo altura.'],errors:['Quadril rodar.','Ombro afundar.','Prolongar após perder posição.']},
+{name:'Wood chop no cabo',scheme:'2–3 × 8–12/lado',rir:'RIR 2',rest:'60s',setup:['Polia alta ou média; pés firmes.'],execution:['Gire quadris e tronco juntos.','Controle o retorno.'],errors:['Torcer apenas a lombar.','Puxar só com braços.','Usar tranco.']}]},
+'core-sunday':{name:'Core pós-longão',subtitle:'Estabilidade de baixa fadiga',day:'Domingo',duration:'15–25 min',focus:'Opcional, 4–6h após o longão',exercises:[
+{name:'Pallof press',scheme:'3 × 8–12/lado',rir:'RIR 2',rest:'45–60s',method:'Pausa 2s'},
+{name:'Bird dog com pausa',scheme:'3 × 6–8/lado',rir:'Técnica',rest:'45–60s',method:'Pausa 3s'},
+{name:'Prancha lateral curta',scheme:'3 × 20–30s/lado',rir:'Técnica',rest:'45–60s'},
+{name:'Dead bug',scheme:'3 × 6–10/lado',rir:'Técnica',rest:'45–60s',setup:['Deite com quadris e joelhos a 90°.','Expire e controle as costelas.'],execution:['Desça um calcanhar e o braço oposto.','Retorne sem arquear a lombar.'],errors:['Amplitude que sobrecarrega o psoas.','Perder posição lombar.']}]}
+};

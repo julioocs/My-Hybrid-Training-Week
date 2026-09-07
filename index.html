@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#08131f" />
+  <meta name="description" content="Acompanhamento do programa híbrido de corrida e musculação." />
+  <title>IronHybrid Treino</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css?v=20260907-1" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">IH</span><span><b>IronHybrid</b><small>Treino</small></span></div>
+    <button id="syncStatus" class="sync-pill" aria-label="Estado da sincronização"><span></span> Local</button>
+  </header>
+
+  <main id="app" class="app-shell">
+    <section id="todayView" class="view active" aria-labelledby="todayTitle">
+      <div class="date-row"><div><p id="todayLabel" class="eyebrow"></p><h1 id="todayTitle">Treino de hoje</h1></div><button id="calendarBtn" class="icon-btn" aria-label="Escolher data">▦</button></div>
+      <input id="datePicker" class="hidden" type="date" />
+      <div id="readinessCard" class="readiness-card"></div>
+      <div id="todayContent"></div>
+    </section>
+
+    <section id="weekView" class="view" aria-labelledby="weekTitle">
+      <p class="eyebrow">PROGRAMA ATUAL</p><h1 id="weekTitle">Sua semana</h1>
+      <div id="weekGrid" class="week-grid"></div>
+    </section>
+
+    <section id="historyView" class="view" aria-labelledby="historyTitle">
+      <p class="eyebrow">EVOLUÇÃO</p><h1 id="historyTitle">Histórico</h1>
+      <div id="historySummary" class="stats-grid"></div>
+      <div class="filter-row"><select id="historyFilter" aria-label="Filtrar histórico"></select><button id="exportBtn" class="secondary-btn">Exportar</button></div>
+      <div id="historyList" class="history-list"></div>
+    </section>
+
+    <section id="settingsView" class="view" aria-labelledby="settingsTitle">
+      <p class="eyebrow">CONTA E DADOS</p><h1 id="settingsTitle">Ajustes</h1>
+      <article class="panel"><h2>Sincronização Firebase</h2><p id="firebaseHelp">O app já funciona offline. Configure o Firebase para sincronizar entre dispositivos.</p><div id="authLoggedOut"><label>E-mail<input id="emailInput" type="email" autocomplete="email" /></label><label>Senha<input id="passwordInput" type="password" autocomplete="current-password" /></label><div class="button-row"><button id="loginBtn" class="primary-btn">Entrar</button><button id="signupBtn" class="secondary-btn">Criar conta</button></div></div><div id="authLoggedIn" class="hidden"><p>Conectado como <b id="userEmail"></b></p><button id="logoutBtn" class="secondary-btn">Sair</button></div></article>
+      <article class="panel"><h2>Dados locais</h2><div class="button-row"><label class="secondary-btn file-label">Importar<input id="importInput" type="file" accept="application/json" /></label><button id="resetBtn" class="danger-btn">Limpar check-ins</button></div></article>
+      <article class="panel"><h2>Instalar no celular</h2><p>Abra pelo navegador e use “Adicionar à tela inicial”. Quando o navegador permitir instalação direta, o botão aparecerá abaixo.</p><button id="installBtn" class="primary-btn hidden">Instalar aplicativo</button></article>
+      <article class="panel compact"><h2>Versão</h2><p>2026.09.07-1</p></article>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <button data-view="todayView" class="active"><span>◉</span>Hoje</button>
+    <button data-view="weekView"><span>▦</span>Semana</button>
+    <button data-view="historyView"><span>↗</span>Histórico</button>
+    <button data-view="settingsView"><span>⚙</span>Ajustes</button>
+  </nav>
+
+  <dialog id="confirmDialog"><form method="dialog"><h2>Limpar os check-ins?</h2><p>As cargas e marcações locais serão apagadas. Exporte um backup antes, se precisar.</p><div class="button-row"><button value="cancel" class="secondary-btn">Cancelar</button><button value="confirm" class="danger-btn">Limpar</button></div></form></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="./firebase-config.js?v=20260907-2"></script>
+  <script type="module" src="./app.js?v=20260907-1"></script>
+</body>
+</html>
